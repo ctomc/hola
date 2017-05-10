@@ -15,10 +15,17 @@ Build and Deploy hola locally
 3. This will create a uber jar at  `target/hola-swarm.jar` and execute it.
 4. The application will be running at the following URL: <http://localhost:8080/api/hola>
 
-Deploy the application in Openshift
+Build local docker image
 -----------------------------------
 
 1. Make sure to be connected to the Docker Daemon
 2. Execute
 
-		mvn clean package docker:build fabric8:json fabric8:apply
+		mvn clean package docker:build fabric8:apply
+
+## Run docker image
+
+1) execute
+
+        docker run -p 8080:8080 -it swarmhola:0.0.1-SNAPSHOT
+
